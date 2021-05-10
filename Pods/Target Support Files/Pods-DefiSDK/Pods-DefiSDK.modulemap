@@ -1,0 +1,6 @@
+framework module Pods_DefiSDK {
+  umbrella header "Pods-DefiSDK-umbrella.h"
+
+  export *
+  module * { export * }
+}
