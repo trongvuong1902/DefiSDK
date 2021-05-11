@@ -7,18 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1A1FCF0CC953A9567C8F614A /* Pods_DefiSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FF9F486FB96E5293C80380C /* Pods_DefiSDK.framework */; };
 		372E2F1326499C8D009173DB /* DefiSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = 372E2F1126499C8D009173DB /* DefiSDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		372E2F2026499D7F009173DB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372E2F1F26499D7F009173DB /* AppDelegate.swift */; };
-		372E2F2226499D7F009173DB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372E2F2126499D7F009173DB /* SceneDelegate.swift */; };
-		372E2F2426499D7F009173DB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372E2F2326499D7F009173DB /* ViewController.swift */; };
-		372E2F2726499D7F009173DB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 372E2F2526499D7F009173DB /* Main.storyboard */; };
-		372E2F2926499D82009173DB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 372E2F2826499D82009173DB /* Assets.xcassets */; };
-		372E2F2C26499D82009173DB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 372E2F2A26499D82009173DB /* LaunchScreen.storyboard */; };
 		372E2F3B2649DA50009173DB /* TypeRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372E2F372649DA50009173DB /* TypeRequest.swift */; };
 		372E2F3C2649DA50009173DB /* JSONResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372E2F382649DA50009173DB /* JSONResponse.swift */; };
 		372E2F3D2649DA50009173DB /* TrustWalletUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372E2F392649DA50009173DB /* TrustWalletUtil.swift */; };
 		372E2F3E2649DA50009173DB /* BridgeManagement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372E2F3A2649DA50009173DB /* BridgeManagement.swift */; };
+		372E2F41264A472E009173DB /* DefiSDK.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372E2F40264A472E009173DB /* DefiSDK.swift */; };
+		372E2F43264A60B0009173DB /* NativeRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372E2F42264A60B0009173DB /* NativeRequest.swift */; };
+		B417D4BC6F0D3B74052E18A4 /* libPods-DefiSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9364934A202F83C7CD92FA39 /* libPods-DefiSDK.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,20 +22,14 @@
 		372E2F0E26499C8D009173DB /* DefiSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DefiSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		372E2F1126499C8D009173DB /* DefiSDK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DefiSDK.h; sourceTree = "<group>"; };
 		372E2F1226499C8D009173DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		372E2F1D26499D7F009173DB /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		372E2F1F26499D7F009173DB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		372E2F2126499D7F009173DB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		372E2F2326499D7F009173DB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		372E2F2626499D7F009173DB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		372E2F2826499D82009173DB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		372E2F2B26499D82009173DB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		372E2F2D26499D82009173DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		372E2F372649DA50009173DB /* TypeRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypeRequest.swift; sourceTree = "<group>"; };
 		372E2F382649DA50009173DB /* JSONResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONResponse.swift; sourceTree = "<group>"; };
 		372E2F392649DA50009173DB /* TrustWalletUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrustWalletUtil.swift; sourceTree = "<group>"; };
 		372E2F3A2649DA50009173DB /* BridgeManagement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BridgeManagement.swift; sourceTree = "<group>"; };
-		5FF9F486FB96E5293C80380C /* Pods_DefiSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DefiSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		372E2F40264A472E009173DB /* DefiSDK.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefiSDK.swift; sourceTree = "<group>"; };
+		372E2F42264A60B0009173DB /* NativeRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NativeRequest.swift; sourceTree = "<group>"; };
 		81D2E579B247BB8C415D1057 /* Pods-DefiSDK.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DefiSDK.release.xcconfig"; path = "Target Support Files/Pods-DefiSDK/Pods-DefiSDK.release.xcconfig"; sourceTree = "<group>"; };
+		9364934A202F83C7CD92FA39 /* libPods-DefiSDK.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DefiSDK.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,14 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1A1FCF0CC953A9567C8F614A /* Pods_DefiSDK.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		372E2F1A26499D7F009173DB /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				B417D4BC6F0D3B74052E18A4 /* libPods-DefiSDK.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,7 +48,6 @@
 			isa = PBXGroup;
 			children = (
 				372E2F1026499C8D009173DB /* DefiSDK */,
-				372E2F1E26499D7F009173DB /* Example */,
 				372E2F0F26499C8D009173DB /* Products */,
 				40BD46D4AED71A57C627B8A6 /* Pods */,
 				D4EDED1C48D22A01E5795F37 /* Frameworks */,
@@ -76,7 +58,6 @@
 			isa = PBXGroup;
 			children = (
 				372E2F0E26499C8D009173DB /* DefiSDK.framework */,
-				372E2F1D26499D7F009173DB /* Example.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -85,35 +66,23 @@
 			isa = PBXGroup;
 			children = (
 				372E2F3A2649DA50009173DB /* BridgeManagement.swift */,
-				372E2F362649DA50009173DB /* Model */,
+				372E2F362649DA50009173DB /* Sources */,
 				372E2F392649DA50009173DB /* TrustWalletUtil.swift */,
 				372E2F1126499C8D009173DB /* DefiSDK.h */,
 				372E2F1226499C8D009173DB /* Info.plist */,
+				372E2F40264A472E009173DB /* DefiSDK.swift */,
 			);
 			path = DefiSDK;
 			sourceTree = "<group>";
 		};
-		372E2F1E26499D7F009173DB /* Example */ = {
-			isa = PBXGroup;
-			children = (
-				372E2F1F26499D7F009173DB /* AppDelegate.swift */,
-				372E2F2126499D7F009173DB /* SceneDelegate.swift */,
-				372E2F2326499D7F009173DB /* ViewController.swift */,
-				372E2F2526499D7F009173DB /* Main.storyboard */,
-				372E2F2826499D82009173DB /* Assets.xcassets */,
-				372E2F2A26499D82009173DB /* LaunchScreen.storyboard */,
-				372E2F2D26499D82009173DB /* Info.plist */,
-			);
-			path = Example;
-			sourceTree = "<group>";
-		};
-		372E2F362649DA50009173DB /* Model */ = {
+		372E2F362649DA50009173DB /* Sources */ = {
 			isa = PBXGroup;
 			children = (
 				372E2F372649DA50009173DB /* TypeRequest.swift */,
 				372E2F382649DA50009173DB /* JSONResponse.swift */,
+				372E2F42264A60B0009173DB /* NativeRequest.swift */,
 			);
-			path = Model;
+			path = Sources;
 			sourceTree = "<group>";
 		};
 		40BD46D4AED71A57C627B8A6 /* Pods */ = {
@@ -128,7 +97,7 @@
 		D4EDED1C48D22A01E5795F37 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				5FF9F486FB96E5293C80380C /* Pods_DefiSDK.framework */,
+				9364934A202F83C7CD92FA39 /* libPods-DefiSDK.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -166,23 +135,6 @@
 			productReference = 372E2F0E26499C8D009173DB /* DefiSDK.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		372E2F1C26499D7F009173DB /* Example */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 372E2F3026499D82009173DB /* Build configuration list for PBXNativeTarget "Example" */;
-			buildPhases = (
-				372E2F1926499D7F009173DB /* Sources */,
-				372E2F1A26499D7F009173DB /* Frameworks */,
-				372E2F1B26499D7F009173DB /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = Example;
-			productName = Example;
-			productReference = 372E2F1D26499D7F009173DB /* Example.app */;
-			productType = "com.apple.product-type.application";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -195,9 +147,6 @@
 					372E2F0D26499C8D009173DB = {
 						CreatedOnToolsVersion = 12.5;
 						LastSwiftMigration = 1250;
-					};
-					372E2F1C26499D7F009173DB = {
-						CreatedOnToolsVersion = 12.5;
 					};
 				};
 			};
@@ -215,7 +164,6 @@
 			projectRoot = "";
 			targets = (
 				372E2F0D26499C8D009173DB /* DefiSDK */,
-				372E2F1C26499D7F009173DB /* Example */,
 			);
 		};
 /* End PBXProject section */
@@ -225,16 +173,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		372E2F1B26499D7F009173DB /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				372E2F2C26499D82009173DB /* LaunchScreen.storyboard in Resources */,
-				372E2F2926499D82009173DB /* Assets.xcassets in Resources */,
-				372E2F2726499D7F009173DB /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,43 +208,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				372E2F43264A60B0009173DB /* NativeRequest.swift in Sources */,
 				372E2F3C2649DA50009173DB /* JSONResponse.swift in Sources */,
+				372E2F41264A472E009173DB /* DefiSDK.swift in Sources */,
 				372E2F3B2649DA50009173DB /* TypeRequest.swift in Sources */,
 				372E2F3D2649DA50009173DB /* TrustWalletUtil.swift in Sources */,
 				372E2F3E2649DA50009173DB /* BridgeManagement.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		372E2F1926499D7F009173DB /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				372E2F2426499D7F009173DB /* ViewController.swift in Sources */,
-				372E2F2026499D7F009173DB /* AppDelegate.swift in Sources */,
-				372E2F2226499D7F009173DB /* SceneDelegate.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		372E2F2526499D7F009173DB /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				372E2F2626499D7F009173DB /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		372E2F2A26499D82009173DB /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				372E2F2B26499D82009173DB /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		372E2F1426499C8D009173DB /* Debug */ = {
@@ -484,44 +395,6 @@
 			};
 			name = Release;
 		};
-		372E2F2E26499D82009173DB /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 53222XWBPJ;
-				INFOPLIST_FILE = Example/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.fury.Example;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		372E2F2F26499D82009173DB /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 53222XWBPJ;
-				INFOPLIST_FILE = Example/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.fury.Example;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -539,15 +412,6 @@
 			buildConfigurations = (
 				372E2F1726499C8D009173DB /* Debug */,
 				372E2F1826499C8D009173DB /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		372E2F3026499D82009173DB /* Build configuration list for PBXNativeTarget "Example" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				372E2F2E26499D82009173DB /* Debug */,
-				372E2F2F26499D82009173DB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
