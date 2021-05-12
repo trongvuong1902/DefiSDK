@@ -61,65 +61,65 @@ public struct BridgeRequestManagement {
         }
     }
     
-    public func handlerRequest(callback: @escaping (Result<Any, Error>) -> ())  {
-        guard let dict = convertStringToDictionary(text: message.body as! String),
-              let key = dict["key"] as? String else {return}
-        if let type = TypeRequest(rawValue: message.name),
-           let request = JSBridgeRequest(rawValue: key) {
-            
-            switch type {
-            case .native:
-                let native = NativeRequest(walletType: .trust)
-                switch request {
-                case .getWallet:
-                    native.getAddresses { result in
-                        switch result {
-                        case .success(let responses): callback(.success(responses.first!))
-                        case .failure(let error): callback(.failure(error))
-                        }
-                    }
-                case .getBalance: callback(.success(native.getBalance()))
-                case .getAccount: callback(.success(native.getAccount()))
-                case .signMsg:
-                    let data = dict["data"] as! [String: Any]
-                    let msg = data["message"] as! String
-//                    native.signMsg(msg: msg, callback: callback)
-                case .sendToken:
-                    guard let data = dict["data"] as? [String: Any],
-                          let address = data["to"] as? String else {return}
-                    var amount = ""
-                    if let value = data["amount"] as? Int64 {
-                        amount = String(value)
-                    }
-                    
-                    if let value = data["amount"] as? String {
-                        amount = value
-                    }
-//                    native.sendToken(to: address, amount: amount, callback: callback)
-                case .sendNativeToken:
-                    guard let data = dict["data"] as? [String: Any],
-                          let contractAddress = data["contractAddress"] as? String,
-                          let address = data["address"] as? String
-                          else {return}
-                    
-                    var amount = ""
-                    if let value = data["amount"] as? Int64 {
-                        amount = String(value)
-                    }
-                    
-                    if let value = data["amount"] as? String {
-                        amount = value
-                    }
-//                    native.sendNativeToken(contractAddress: contractAddress,
-//                                                  toAddress: address, amount: amount, callback: callback)
-                case .signTrans: return
-                case .checkAppInstall: return
-//                    native.getWalletInstalled(listWallets: [""], callback: callback)
-                }
-            case .networkNative:
-                return
-            }
-        }
-        return
-    }
+//    public func handlerRequest(callback: @escaping (Result<Any, Error>) -> ())  {
+//        guard let dict = convertStringToDictionary(text: message.body as! String),
+//              let key = dict["key"] as? String else {return}
+//        if let type = TypeRequest(rawValue: message.name),
+//           let request = JSBridgeRequest(rawValue: key) {
+//            
+//            switch type {
+//            case .native:
+//                let native = NativeRequest(walletType: .trust)
+//                switch request {
+//                case .getWallet:
+//                    native.getAddresses { result in
+//                        switch result {
+//                        case .success(let responses): callback(.success(responses.first!))
+//                        case .failure(let error): callback(.failure(error))
+//                        }
+//                    }
+//                case .getBalance: callback(.success(native.getBalance()))
+//                case .getAccount: callback(.success(native.getAccount()))
+//                case .signMsg:
+//                    let data = dict["data"] as! [String: Any]
+//                    let msg = data["message"] as! String
+////                    native.signMsg(msg: msg, callback: callback)
+//                case .sendToken:
+//                    guard let data = dict["data"] as? [String: Any],
+//                          let address = data["to"] as? String else {return}
+//                    var amount = ""
+//                    if let value = data["amount"] as? Int64 {
+//                        amount = String(value)
+//                    }
+//                    
+//                    if let value = data["amount"] as? String {
+//                        amount = value
+//                    }
+////                    native.sendToken(to: address, amount: amount, callback: callback)
+//                case .sendNativeToken:
+//                    guard let data = dict["data"] as? [String: Any],
+//                          let contractAddress = data["contractAddress"] as? String,
+//                          let address = data["address"] as? String
+//                          else {return}
+//                    
+//                    var amount = ""
+//                    if let value = data["amount"] as? Int64 {
+//                        amount = String(value)
+//                    }
+//                    
+//                    if let value = data["amount"] as? String {
+//                        amount = value
+//                    }
+////                    native.sendNativeToken(contractAddress: contractAddress,
+////                                                  toAddress: address, amount: amount, callback: callback)
+//                case .signTrans: return
+//                case .checkAppInstall: return
+////                    native.getWalletInstalled(listWallets: [""], callback: callback)
+//                }
+//            case .networkNative:
+//                return
+//            }
+//        }
+//        return
+//    }
 }

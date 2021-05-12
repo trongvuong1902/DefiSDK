@@ -17,7 +17,7 @@ Pod::Spec.new do |spec|
   spec.platform = :ios
   spec.ios.deployment_target = '12.0'
   spec.name         = "DefiSDK"
-  spec.version      = "0.1.0"
+  spec.version      = "0.1.1"
   spec.summary      = "Bridge to communicate with defi web"
 
   # This description is used to generate tags and improve search results.
