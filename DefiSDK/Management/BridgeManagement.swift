@@ -11,8 +11,16 @@ import WebKit
 
 public struct BridgeRequestManagement {
     let message: WKScriptMessage!
+    var type: TypeRequest?
+    var request: JSBridgeRequest?
+    
     public init(message: WKScriptMessage) {
         self.message = message
+        if let dict = convertStringToDictionary(text: message.body as! String),
+           let key = dict["key"] as? String {
+            type = TypeRequest(rawValue: message.name)
+            request = JSBridgeRequest(rawValue: key)
+        }
     }
     
     func convertStringToDictionary(text: String) -> [String:AnyObject]? {
@@ -27,7 +35,7 @@ public struct BridgeRequestManagement {
         return nil
     }
     
-    public func handlerRequest(callback: @escaping (Result<String, Error>) -> ())  {
+    public func handlerRequest(callback: @escaping (Result<Any, Error>) -> ())  {
         guard let dict = convertStringToDictionary(text: message.body as! String),
               let key = dict["key"] as? String else {return}
         if let type = TypeRequest(rawValue: message.name),
@@ -79,6 +87,8 @@ public struct BridgeRequestManagement {
                     native.sendNativeToken(contractAddress: contractAddress,
                                                   toAddress: address, amount: amount, callback: callback)
                 case .signTrans: return
+                case .checkAppInstall:
+                    native.getWalletInstalled(listWallets: [""], callback: callback)
                 }
             case .networkNative:
                 return

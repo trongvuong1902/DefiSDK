@@ -8,8 +8,8 @@
 import Foundation
 import UIKit
 
-struct NativeRequest: BridgeWebKit {
-    func getWalletInstalled(listWallets: [String],
+public struct NativeRequest: BridgeWebKit {
+    public func getWalletInstalled(listWallets: [String],
                             callback: @escaping ((Result<[WalletType], Error>) -> Void)) {
         print("check those wallets is installed: \(listWallets)")
         var walletsInstalled = [WalletType]()
@@ -23,9 +23,9 @@ struct NativeRequest: BridgeWebKit {
         callback(.success(walletsInstalled))
     }
     
-    var walletType: WalletType
+    public var walletType: WalletType
     
-    func sendNativeToken(contractAddress: String, toAddress: String, amount: String,
+    public func sendNativeToken(contractAddress: String, toAddress: String, amount: String,
                          callback: @escaping (Result<String, Error>) -> Void) {
         print("Send \(amount) trx")
         switch walletType {
@@ -46,7 +46,7 @@ struct NativeRequest: BridgeWebKit {
         
     }
     
-    func sendToken(to: String, amount: String,
+    public func sendToken(to: String, amount: String,
                    callback: @escaping (Result<String, Error>) -> Void) {
         print("send token")
         TrustWalletUtil.sendTrx(amount: String(amount), address: to) { result in
@@ -58,7 +58,7 @@ struct NativeRequest: BridgeWebKit {
         }
     }
     
-    func signMsg(msg: String, callback: @escaping (Result<String, Error>) -> Void) {
+    public func signMsg(msg: String, callback: @escaping (Result<String, Error>) -> Void) {
         print("sign message")
         TrustWalletUtil().signMessage(message: msg) { result in
             switch result {
@@ -68,7 +68,7 @@ struct NativeRequest: BridgeWebKit {
         }
     }
     
-    func getAddresses(callback: @escaping (Result<[String], Error>) -> Void){
+    public func getAddresses(callback: @escaping (Result<[String], Error>) -> Void){
         print("Native get wallet")
         switch walletType {
         case .trust:
@@ -90,7 +90,7 @@ struct NativeRequest: BridgeWebKit {
         }
     }
     
-    func getAccount() -> String{
+    public func getAccount() -> String{
         print("Get Account")
         do {
             let account = AccountData()
@@ -101,7 +101,7 @@ struct NativeRequest: BridgeWebKit {
         return ""
     }
     
-    func getBalance() -> String {
+    public func getBalance() -> String {
         print("Get balance script")
         do {
             let account = AccountData()

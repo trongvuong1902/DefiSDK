@@ -13,6 +13,7 @@ public enum TypeRequest: String {
 }
 
 public enum JSBridgeRequest: String {
+    case checkAppInstall = "APP_INSTALL"
     case getWallet = "GET_WALLET"
     case getBalance = "GET_BALANCE"
     case getAccount = "GET_ACCOUNT"
