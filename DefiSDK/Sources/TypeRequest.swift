@@ -25,11 +25,19 @@ public enum JSBridgeRequest: String {
 public enum WalletType: String {
     case trust = "TRUST_WALLET"
     case metamask = "META_MASK"
+    
+    var urlScheme: URL? {
+        switch self {
+        case .trust: return URL(string: "trust://")
+        case .metamask: return URL(string: "")
+        }
+    }
 }
 
 public protocol BridgeWebKit {
     var walletType: WalletType {get set}
-    
+    func getWalletInstalled(listWallets: [String],
+                            callback: @escaping ((Result<[WalletType], Error>) -> Void))
     func getAddresses(callback: @escaping (Result<[String], Error>) -> Void)
     func getAccount() -> String
     func getBalance() -> String

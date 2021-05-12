@@ -65,9 +65,9 @@
 		372E2F1026499C8D009173DB /* DefiSDK */ = {
 			isa = PBXGroup;
 			children = (
-				372E2F3A2649DA50009173DB /* BridgeManagement.swift */,
+				372E2F65264A83AC009173DB /* Management */,
+				372E2F64264A83A5009173DB /* WalletUtil */,
 				372E2F362649DA50009173DB /* Sources */,
-				372E2F392649DA50009173DB /* TrustWalletUtil.swift */,
 				372E2F1126499C8D009173DB /* DefiSDK.h */,
 				372E2F1226499C8D009173DB /* Info.plist */,
 				372E2F40264A472E009173DB /* DefiSDK.swift */,
@@ -83,6 +83,22 @@
 				372E2F42264A60B0009173DB /* NativeRequest.swift */,
 			);
 			path = Sources;
+			sourceTree = "<group>";
+		};
+		372E2F64264A83A5009173DB /* WalletUtil */ = {
+			isa = PBXGroup;
+			children = (
+				372E2F392649DA50009173DB /* TrustWalletUtil.swift */,
+			);
+			path = WalletUtil;
+			sourceTree = "<group>";
+		};
+		372E2F65264A83AC009173DB /* Management */ = {
+			isa = PBXGroup;
+			children = (
+				372E2F3A2649DA50009173DB /* BridgeManagement.swift */,
+			);
+			path = Management;
 			sourceTree = "<group>";
 		};
 		40BD46D4AED71A57C627B8A6 /* Pods */ = {

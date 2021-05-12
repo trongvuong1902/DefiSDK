@@ -6,8 +6,23 @@
 //
 
 import Foundation
+import UIKit
 
 struct NativeRequest: BridgeWebKit {
+    func getWalletInstalled(listWallets: [String],
+                            callback: @escaping ((Result<[WalletType], Error>) -> Void)) {
+        print("check those wallets is installed: \(listWallets)")
+        var walletsInstalled = [WalletType]()
+        for wallet in listWallets {
+            if let walletType = WalletType(rawValue: wallet) {
+                if UIApplication.shared.canOpenURL(walletType.urlScheme!) {
+                    walletsInstalled.append(walletType)
+                }
+            }
+        }
+        callback(.success(walletsInstalled))
+    }
+    
     var walletType: WalletType
     
     func sendNativeToken(contractAddress: String, toAddress: String, amount: String,
