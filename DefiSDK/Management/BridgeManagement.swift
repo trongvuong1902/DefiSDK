@@ -9,18 +9,25 @@ import Foundation
 import UIKit
 import WebKit
 
+public protocol ResponseDelegate {
+    func getAddresses(addresses: [String])
+}
+
 public struct BridgeRequestManagement {
+    var wallet: WalletType!
     let message: WKScriptMessage!
     var type: TypeRequest?
     var request: JSBridgeRequest?
-    
-    public init(message: WKScriptMessage) {
+    var delegate: ResponseDelegate?
+    public init(message: WKScriptMessage, walletType: WalletType) {
         self.message = message
+        self.wallet = walletType
         if let dict = convertStringToDictionary(text: message.body as! String),
            let key = dict["key"] as? String {
             type = TypeRequest(rawValue: message.name)
             request = JSBridgeRequest(rawValue: key)
         }
+        listenEvent()
     }
     
     func convertStringToDictionary(text: String) -> [String:AnyObject]? {
@@ -33,6 +40,25 @@ public struct BridgeRequestManagement {
             }
         }
         return nil
+    }
+    
+    public func listenEvent() {
+        switch type {
+        case .native:
+            let native = NativeRequest(walletType: wallet)
+            switch request {
+            case .getWallet:
+                native.getAddresses { result in
+                    switch result {
+                    case .success(let responses):
+                        delegate?.getAddresses(addresses: responses)                    case .failure(let error):
+                            print("Check wallet addresses error: \(error.localizedDescription)")
+                    }
+                }
+            default: break
+            }
+        default: break
+        }
     }
     
     public func handlerRequest(callback: @escaping (Result<Any, Error>) -> ())  {
@@ -57,7 +83,7 @@ public struct BridgeRequestManagement {
                 case .signMsg:
                     let data = dict["data"] as! [String: Any]
                     let msg = data["message"] as! String
-                    native.signMsg(msg: msg, callback: callback)
+//                    native.signMsg(msg: msg, callback: callback)
                 case .sendToken:
                     guard let data = dict["data"] as? [String: Any],
                           let address = data["to"] as? String else {return}
@@ -69,7 +95,7 @@ public struct BridgeRequestManagement {
                     if let value = data["amount"] as? String {
                         amount = value
                     }
-                    native.sendToken(to: address, amount: amount, callback: callback)
+//                    native.sendToken(to: address, amount: amount, callback: callback)
                 case .sendNativeToken:
                     guard let data = dict["data"] as? [String: Any],
                           let contractAddress = data["contractAddress"] as? String,
@@ -84,11 +110,11 @@ public struct BridgeRequestManagement {
                     if let value = data["amount"] as? String {
                         amount = value
                     }
-                    native.sendNativeToken(contractAddress: contractAddress,
-                                                  toAddress: address, amount: amount, callback: callback)
+//                    native.sendNativeToken(contractAddress: contractAddress,
+//                                                  toAddress: address, amount: amount, callback: callback)
                 case .signTrans: return
-                case .checkAppInstall:
-                    native.getWalletInstalled(listWallets: [""], callback: callback)
+                case .checkAppInstall: return
+//                    native.getWalletInstalled(listWallets: [""], callback: callback)
                 }
             case .networkNative:
                 return
